@@ -10,6 +10,37 @@
         href="icon.png">
 	<link rel="icon" type="image/png" sizes="16x16"   href="/favicon-16x16.png">
 	<link rel="icon" type="image/png" sizes="32x32"   href="/favicon-32x32.png">
+	<style>
+	  details summary {
+		cursor: pointer;
+		user-select: none;            /* metin seçimini engeller (fareyle mavi seçimi) */
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-tap-highlight-color: transparent; /* mobildeki mavi vurguyu kaldırır */
+		outline: none;               /* varsayılan odak çemberini gizler */
+	  }
+
+	  /* Eğer bir tarayıcı metin seçimi gösterirse, sadece summary içinde seçim arkaplanını kaldır */
+	  details summary::selection,
+	  details summary *::selection {
+		background: transparent;
+	  }
+
+	  /* Erişilebilirlik: klavyeden gezen kullanıcılar için odak görünürlüğü (sadece Tab ile gelen odak için) */
+	  details summary:focus-visible {
+		outline: 2px solid #6ca0ff;
+		outline-offset: 4px;
+		border-radius: 4px;
+	  }
+
+	  /* opsiyonel görsel iyileştirme */
+	  details summary::-webkit-details-marker { 
+		display: inline-block; /* marker davranışını kontrol etmek istersen buradan */
+		margin-right: 6px;
+	  }
+	</style>
+	
 </HEAD>
 
 <BODY bgcolor="#000000"
