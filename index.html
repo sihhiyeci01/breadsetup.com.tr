@@ -11,33 +11,34 @@
 	<link rel="icon" type="image/png" sizes="16x16"   href="/favicon-16x16.png">
 	<link rel="icon" type="image/png" sizes="32x32"   href="/favicon-32x32.png">
 	<style>
+	  /* Senin mevcut summary stilin */
 	  details summary {
 		cursor: pointer;
-		user-select: none;            /* metin seçimini engeller (fareyle mavi seçimi) */
+		user-select: none;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
-		-webkit-tap-highlight-color: transparent; /* mobildeki mavi vurguyu kaldırır */
-		outline: none;               /* varsayılan odak çemberini gizler */
+		-webkit-tap-highlight-color: transparent;
+		outline: none;
 	  }
-
-	  /* Eğer bir tarayıcı metin seçimi gösterirse, sadece summary içinde seçim arkaplanını kaldır */
 	  details summary::selection,
 	  details summary *::selection {
 		background: transparent;
 	  }
-
-	  /* Erişilebilirlik: klavyeden gezen kullanıcılar için odak görünürlüğü (sadece Tab ile gelen odak için) */
 	  details summary:focus-visible {
 		outline: 2px solid #6ca0ff;
 		outline-offset: 4px;
 		border-radius: 4px;
 	  }
-
-	  /* opsiyonel görsel iyileştirme */
-	  details summary::-webkit-details-marker { 
-		display: inline-block; /* marker davranışını kontrol etmek istersen buradan */
+	  details summary::-webkit-details-marker {
+		display: inline-block;
 		margin-right: 6px;
+	  }
+
+	  /* Opsiyonel: rendering keskinliği biraz daha iyi olsun diye (isteğe bağlı) */
+	  html {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	  }
 	</style>
 	
@@ -97,9 +98,34 @@
 	  info@breadsetup.com.tr <BR> &copy; 2025 Bread DEMO
     </FONT>
   </CENTER>
+
+  <!-- SCALE SCRIPT: Chrome/Edge/Safari için zoom, Firefox için transform fallback -->
+  <script>
+    (function() {
+      const scale = 1.1; // 1.1 = %110
+      const ua = navigator.userAgent.toLowerCase();
+      const isFirefox = ua.indexOf('firefox') !== -1;
+
+      // Small timeout to avoid layout flash on very early render
+      requestAnimationFrame(() => {
+        if (!isFirefox) {
+          try {
+            document.documentElement.style.zoom = scale;
+          } catch (e) {
+            // Eğer bir sorun çıkarsa, fallback olarak transform uygula
+            document.documentElement.style.transformOrigin = '0 0';
+            document.documentElement.style.transform = 'scale(' + scale + ')';
+            document.documentElement.style.width = 'calc(100% / ' + scale + ')';
+          }
+        } else {
+          // Firefox fallback
+          document.documentElement.style.transformOrigin = '0 0';
+          document.documentElement.style.transform = 'scale(' + scale + ')';
+          document.documentElement.style.width = 'calc(100% / ' + scale + ')';
+        }
+      });
+    })();
+  </script>
+
 </BODY>
 </html>
-
-
-
-
