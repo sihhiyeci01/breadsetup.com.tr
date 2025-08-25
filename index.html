@@ -12,6 +12,31 @@
 	<link rel="icon" type="image/png" sizes="32x32"   href="/favicon-32x32.png">
 	<style>
 	  /* Senin mevcut summary stilin */
+	  :root{
+		--hr-color: #FFFFFF;
+		--hr-height: 1px;
+	  }
+
+	  /* temel görünüm */
+	  .hr {
+		border: 0;
+		height: var(--hr-height);
+		background: var(--hr-color);
+		width: 100%;
+		margin: 4px; 
+	  }
+
+	  /* değişken genişlikler */
+	  .hr--25 { width: 25%; }
+	  .hr--50 { width: 50%; }
+	  .hr--75 { width: 75%; }
+
+	  /* ortalamak istersen */
+	  .hr--center { margin-left: auto; margin-right: auto; }
+
+	  /* opsiyonel: daha ince/koyu vb varyasyonlar */
+	  .hr--thin { height: 1px; }
+	  .hr--thick { height: 3px; }
 	  details summary {
 		cursor: pointer;
 		user-select: none;
@@ -41,46 +66,50 @@
 		-moz-osx-font-smoothing: grayscale;
 	  }
 	</style>
-	
 </HEAD>
-
 <BODY bgcolor="#000000"
       text="#FFFFFF"
       link="#FFFFFF"
       alink="#FFFFFF"
       vlink="#FFFFFF">
   <CENTER>
-	<hr style="border:0; height:1px; background:#FFFFFF; width:100%;"> 
+	<hr>
 	<FONT face="Simsun-ExtB, monospace" size="5" style="text-shadow: 0 0 32px #FFFFFF;">
        <B>Bread: A Universal Revolution</B>
-	   <BR>
 	</FONT>
-	<hr style="border:0; height:1px; background:#FFFFFF; width:100%;"> 
+	<hr>
+	
+	<FONT face="Courier New, monospace" size="2" color="white"
+		  style="color: rgba(255,255,255,0.80); font-size:12px; opacity:1;">
+	  &copy; 2025 Bread DEMO
+	</FONT>
 	
 	<BR><BR><BR><BR>
 	
-	<img src="icon.png" width="45" height="45"> 
+	<img src="icon.png" width="45" height="45">
 	
 	<BR>
 	
-	<hr style="border:0; height:1px; background:#FFFFFF; width:25%;"> 
+	<hr class="hr hr--25">  
     <div style="margin-bottom:36px;">
-      <div style="font-size:20px; color:lightgrey;">Bread Unlimited Version | 0.0.1-beta</div>
+      <div style="font-size:20px; color:lightgrey;">Bread Unlimited Version |
+	  <img src="icon.ico" width="15" height="15"> 0.0.1-beta</div>
       <div style="margin:1px 0;">
         <a href="https://github.com/sihhiyeci01/breadsetup.com.tr/releases/download/v0.0.1-beta/breadsetup.beta.exe">Windows 64 bit</a>
-		<hr style="border:0; height:1px; background:#FFFFFF; width:25%;"> 
+		<hr class="hr hr--25">  
 	  </div>
     </div>
 	
-	<hr style="border:0; height:1px; background:#FFFFFF; width:25%;"> 
+	<hr class="hr hr--25">  
 	<div style="margin-bottom:36px;">
-      <div style="font-size:20px; color:lightgrey;">Bread Test Version | 0.0.1-alpha</div>
+      <div style="font-size:20px; color:lightgrey;">Bread Unlimited Version |
+	  <img src="icon.ico" width="15" height="15"> 0.0.1-alpha</div>
       <div style="margin:1px 0;">
         <a href="https://github.com/sihhiyeci01/breadsetup.com.tr/releases/download/v0.0.1-alpha/breadsetup.alpha.exe">Windows 64 bit</a>
-		<hr style="border:0; height:1px; background:#FFFFFF; width:25%;"> 
+		<hr class="hr hr--25">  
 	  </div>
     </div>
-	
+
 	<details>
 	  <summary>See the important information</summary>
 	  <p>
@@ -92,14 +121,13 @@
 	  </p>
 	</details>
 	
-	<BR>
+	<BR><BR><BR><BR>
 	
-    <FONT face="Courier New, monospace" size="2" color="lightgrey">
-	  info@breadsetup.com.tr <BR> &copy; 2025 Bread DEMO
+	<FONT face="Courier New, monospace" size="2" color="lightgrey">
+	  info@breadsetup.com.tr <BR> <hr>
     </FONT>
+	
   </CENTER>
-
-  <!-- SCALE SCRIPT: Chrome/Edge/Safari için zoom, Firefox için transform fallback -->
   <script>
     (function() {
       const scale = 1.1; // 1.1 = %110
@@ -126,6 +154,5 @@
       });
     })();
   </script>
-
 </BODY>
 </html>
